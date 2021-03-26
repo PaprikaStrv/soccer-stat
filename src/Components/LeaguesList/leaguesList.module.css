@@ -1,0 +1,67 @@
+/* .leaguesContainer {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.leaguesContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(36, 1fr);
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . .";
+}
+
+
+@media (max-width: 767px) {
+  /* стили для xs-устройств */
+  .headerWrapper {
+    background: red;
+  }
+  .logoImgSize {
+    width: 20px;
+    height: 20px;
+  }
+  .leaguesContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  /* стили для sm-устройств */
+  .leaguesContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . . . "
+      ". . . . "
+      ". . . . "
+      ". . . . "
+      ". . . . "
+      ". . . . ";
+  }
+  
+
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+  /* стили для md-устройств */
+  
+}
+
+@media (min-width: 1200px) and (max-width: 2100px) {
+  /* стили для lg-устройств */
+  
+}
+
+@media (min-width: 2100px) {
+  /* стили для xs-устройств */
+
+}
