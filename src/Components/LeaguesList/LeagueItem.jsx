@@ -6,9 +6,9 @@ const LeagueItem = (props) => {
    
     return (
         <div className={s.leagueItemWrapper}>
-            <NavLink to={"/" + props.id}>
-                {props.area.name}:{props.name}
-            </NavLink>
+            <NavLink to={"/League/" + props.id}>
+                {props.name} id: ({props.id}) 
+            </NavLink> 
         </div>
     );
 }

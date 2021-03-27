@@ -1,24 +1,23 @@
 import React, { useEffect } from "react";
 import LeaguesList from "./LeaguesList";
-import {
-  getLeaguesThunkCreator,
-} from "./../../Redux/leagues-reducer";
+import { getLeaguesThunkCreator } from "./../../Redux/leagues-reducer";
 import { connect } from "react-redux";
-
 
 const LeaguesListContainer = (props) => {
   useEffect(() => {
     props.getLeaguesThunkCreator();
-  }, []); //зависимость?!
+  }, [props.searchResult]); //зависимость?!
 
-  if (!props.leaguesList || props.leaguesList.length === 0) {
+  if (props.leaguesList === null || props.leaguesList.length === 0) {
     return <div>Loading data</div>;
   }
+ 
   return <LeaguesList {...props} />;
 };
 
 const mapStateToProps = (state) => ({
   leaguesList: state.leagues.leaguesList,
+  searchResult: state.leagues.searchResult,
 });
 
 export default connect(mapStateToProps, {

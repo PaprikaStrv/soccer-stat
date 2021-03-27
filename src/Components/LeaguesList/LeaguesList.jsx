@@ -1,18 +1,35 @@
 import React from "react";
-import * as axios from "axios";
 import s from "./leaguesList.module.css";
 import LeagueItem from "./LeagueItem";
 
 const LeaguesList = (props) => {
+  
   let League = [];
-  if (!props.leaguesList.competitions) {
-    League = <LeagueItem key={props.leaguesList.id} id={props.leaguesList.id} area={props.leaguesList.area} name={props.leaguesList.name}/>
+ 
+  //Проверка на наличия филтра(поиска по id)
+  if (!props.searchResult) {
+    League = props.leaguesList.competitions.map((league) => 
+      <LeagueItem
+        key={league.id}
+        id={league.id}
+        area={league.area}
+        name={league.name}
+      />
+    );
   } else {
-    League = props.leaguesList.competitions.map((league) => (
-      <LeagueItem key={league.id} id={league.id} area={league.area} name={league.name} />
-    ));
+    for (let i = 0; i < props.leaguesList.competitions.length; i++) {
+      if (parseInt(props.leaguesList.competitions[i].id, 10) === parseInt(props.searchResult, 10)) {
+        League = (
+          <LeagueItem
+            key={props.leaguesList.competitions[i].id}
+            id={props.leaguesList.competitions[i].id}
+            area={props.leaguesList.competitions[i].area}
+            name={props.leaguesList.competitions[i].name}
+          />
+        );
+      }
+    }
   }
-  console.log(props.leaguesList)
 
   return (
     <div>

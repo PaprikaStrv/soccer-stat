@@ -1,12 +1,12 @@
-import react from 'react';
+import React from 'react';
 import { Form, Field } from 'react-final-form';
 import s from './searchLeague.module.css';
 import { connect } from 'react-redux';
-import { getLeaguesThunkCreator } from "./../../Redux/leagues-reducer";
+import { setSearchResult } from "./../../Redux/leagues-reducer";
   
 const SearchLeague = (props) => {
   const onSubmit = (values) => {
-    props.getLeaguesThunkCreator(values.findLigue)
+    props.setSearchResult(values.findLigue)
 };
   return (
     <div className={s.searchLeagueWrapper}>
@@ -34,4 +34,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, {getLeaguesThunkCreator})(SearchLeague);
+export default connect(mapStateToProps, {setSearchResult})(SearchLeague);

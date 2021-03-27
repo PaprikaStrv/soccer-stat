@@ -1,0 +1,16 @@
+.matchesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.matchContainer {
+    border: 1px solid black;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+s.statusInfo {
+    display: flex;
+    flex-direction: column;
+}

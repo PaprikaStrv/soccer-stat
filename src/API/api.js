@@ -4,15 +4,24 @@ const instance = axios.create({
   // withCredentials: true,
   baseURL: "https://api.football-data.org/v2/",
   headers: {
-    "Content-Type": `application/json`,
+    // "Content-Type": `application/json`,
+    // "Access-Control-Allow-Origin": "*",
+    // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+    // "Access-Control-Allow-Headers": "x-requested-with, Content-Type, origin, authorization, accept, x-access-token",
     "X-Auth-Token": "56c528b27099407ba648fc6d89af86c4",
   },
 });
 
 export const soccerAPI = {
-  getLeagues(searchResult = '') {
-    return instance.get(`competitions/${searchResult}`).then((response) => {
+  getLeagues(currentLeague = '') {
+    return instance.get(`competitions/${currentLeague}`).then((response) => {
       return response.data;
     });
   },
+  getLeagueMatches(currentLeague = '') {
+    return instance.get(`competitions/${currentLeague}/matches`).then((response) => {
+      return response.data;
+    });
+  },
+  
 };
