@@ -10,7 +10,7 @@ import { withRouter } from "react-router";
 const LeaguePageContainer = (props) => {
   useEffect(() => {
     props.getLeaguesThunkCreator(props.match.params.leagueId);
-  }, [props.match.params.leagueId]); //зависимость?!
+  }, [props.searchResult]); //зависимость?!
 
   if (!props.leaguesList || props.leaguesList.length === 0) {
     return <div>Loading data</div>;
@@ -21,6 +21,7 @@ const LeaguePageContainer = (props) => {
 
 const mapStateToProps = (state) => ({
   leaguesList: state.leagues.leaguesList,
+  searchResult: state.leagues.searchResult,
 });
 
 let WithUrlDataLeaguePageContainer = withRouter(LeaguePageContainer);

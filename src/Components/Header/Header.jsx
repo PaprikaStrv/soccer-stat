@@ -7,7 +7,7 @@ import s from "./header.module.css";
 const Header = (props) => {
   return (
     <div className={s.headerWrapper}>
-      <NavLink to={"/"}>
+      <NavLink to={"/"} target="_blank" rel="nofollow noopener">
         <div className={s.headerLogoWrapper}>
           <img src={logo} className={s.logoImgSize} alt={""} />
         </div>
@@ -19,7 +19,7 @@ const Header = (props) => {
           2000,2001,2002,2003,2013,2014, 
           2015,2016,2017,2018,2019,2021
         </div>
-        <SearchLeague />
+       
       </div>
     </div>
   );

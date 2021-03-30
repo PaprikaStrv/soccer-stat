@@ -23,5 +23,10 @@ export const soccerAPI = {
       return response.data;
     });
   },
+  getTeams() {
+    return instance.get(`teams`).then((response) => {
+      return response.data;
+    })
+  }
   
 };

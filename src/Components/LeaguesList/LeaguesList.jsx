@@ -1,24 +1,28 @@
 import React from "react";
 import s from "./leaguesList.module.css";
 import LeagueItem from "./LeagueItem";
+import SearchLeague from "./../SearchLeague/SearchLeague";
+import { NavLink } from "react-router-dom";
 
 const LeaguesList = (props) => {
-  
   let League = [];
- 
+
   //Проверка на наличия филтра(поиска по id)
   if (!props.searchResult) {
-    League = props.leaguesList.competitions.map((league) => 
+    League = props.leaguesList.competitions.map((league) => (
       <LeagueItem
         key={league.id}
         id={league.id}
         area={league.area}
         name={league.name}
       />
-    );
+    ));
   } else {
     for (let i = 0; i < props.leaguesList.competitions.length; i++) {
-      if (parseInt(props.leaguesList.competitions[i].id, 10) === parseInt(props.searchResult, 10)) {
+      if (
+        parseInt(props.leaguesList.competitions[i].id, 10) ===
+        parseInt(props.searchResult, 10)
+      ) {
         League = (
           <LeagueItem
             key={props.leaguesList.competitions[i].id}
@@ -33,7 +37,11 @@ const LeaguesList = (props) => {
 
   return (
     <div>
-      <div>Список лиг</div>
+      <div className={s.leaguesListHeader}>
+        <h2>Список турниров по футблоу</h2>
+        <NavLink to={"/teams"}>Список команд</NavLink>
+        <SearchLeague />
+      </div>
       <div className={s.leaguesContainer}>{League}</div>
     </div>
   );
