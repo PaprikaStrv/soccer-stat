@@ -1,31 +1,25 @@
-.matchesWrapper {
-    /* display: flex;
+.teamsWrapper {
+    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: space-between; */
-    margin-bottom: 10px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 0px 0px;
-    grid-template-areas:
-      ". ."
-      ". ."
-      ". .";
 }
 
-.matchContainer {
+
+
+.teamWrapper {
     border: 1px solid black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.teamContainer {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+}
+.teamPreview {
+    display: flex;
     align-items: center;
 }
 
-s.statusInfo {
-    display: flex;
-    flex-direction: column;
-}
-
-.teamsScore {
-    display: flex;
-    flex-direction: column;
+.teamImage {
+    max-width: 60px;
 }

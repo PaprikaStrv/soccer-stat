@@ -13,20 +13,32 @@ const instance = axios.create({
 });
 
 export const soccerAPI = {
-  getLeagues(currentLeague = '') {
+  getLeagues(currentLeague = "") {
     return instance.get(`competitions/${currentLeague}`).then((response) => {
       return response.data;
     });
   },
-  getLeagueMatches(currentLeague = '') {
-    return instance.get(`competitions/${currentLeague}/matches`).then((response) => {
-      return response.data;
-    });
+  getLeagueMatches(currentLeague = "") {
+    return instance
+      .get(`competitions/${currentLeague}/matches`)
+      .then((response) => {
+        return response.data;
+      });
   },
-  getTeams() {
-    return instance.get(`teams`).then((response) => {
-      return response.data;
-    })
-  }
-  
+
+  getTeams(currentLeague = "") {
+    return instance
+      .get(`competitions/${currentLeague}/teams`)
+      .then((response) => {
+        return response.data;
+      });
+  },
+
+  getLeagueTable(currentLeague = "", currentSeason = "2020") {
+    return instance
+      .get(`competitions/${currentLeague}/standings?season=${currentSeason}`)
+      .then((response) => {
+        return response.data;
+      });
+  },
 };

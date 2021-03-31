@@ -1,13 +1,12 @@
 import React from "react";
 import Team from "./Team";
-import Match from "./Team";
 import s from "./teams.module.css";
 
 const Teams = (props) => {
   let teams = [];
 
   teams = props.teamsList.teams.map((team) => (
-     <Team key={team.id} team={team}/> 
+    <Team key={team.id} team={team} />
   ));
   // //Проверка на наличия филтра(поиска по id)
   // if (!props.searchResult) {
@@ -30,7 +29,12 @@ const Teams = (props) => {
   //   }
   // }
 
-  return <div className={s.matchesWrapper}>{teams}</div>;
+  return (
+    <div>
+      <h2>Список команд лиги {props.leaguesList.name}</h2>
+      <div className={s.teamsWrapper}>{teams}</div>;
+    </div>
+  );
 };
 
 export default Teams;

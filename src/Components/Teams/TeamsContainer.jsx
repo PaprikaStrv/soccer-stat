@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getTeamsThunkCreator } from "../../Redux/leagues-reducer";
+import { getTeamsThunkCreator } from "../../Redux/teams-reducer";
 import { withRouter } from 'react-router';
 import Teams from "./Teams";
 
 
 const TeamsContainer = (props) => {
+  console.log(props.match.params)
   useEffect(() => {
-    props.getTeamsThunkCreator();
-  }, [props.searchResult]); //зависимость?!
+    props.getTeamsThunkCreator(parseInt(props.match.params.leagueId, 10));
+  }, [props.match.params.leagueId]); //зависимость?!
 
   if (!props.teamsList || props.teamsList.length === 0) {
     return <div>Loading data</div>;
@@ -18,8 +19,9 @@ const TeamsContainer = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  teamsList: state.leagues.teamsList,
-  searchResult: state.leagues.searchResult,
+  teamsList: state.teams.teamsList,
+  leaguesList: state.leagues.leaguesList,
+  searchResult: state.search.searchResult,
 });
 
 let WithUrlDataTeamsContainer = withRouter(TeamsContainer);

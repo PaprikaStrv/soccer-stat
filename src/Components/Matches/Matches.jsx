@@ -12,10 +12,7 @@ const Matches = (props) => {
     ));
   } else {
     for (let i = 0; i < props.leagueMatches.matches.length; i++) {
-      if (
-        parseInt(props.leagueMatches.matches[i].id, 10) ===
-        parseInt(props.searchResult, 10)
-      ) {
+      if (parseInt(props.leagueMatches.matches[i].id, 10) === parseInt(props.searchResult, 10)) {
         Matches = (
           <Match
             key={props.leagueMatches.matches[i].id}

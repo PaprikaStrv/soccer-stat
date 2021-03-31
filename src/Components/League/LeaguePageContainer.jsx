@@ -21,7 +21,7 @@ const LeaguePageContainer = (props) => {
 
 const mapStateToProps = (state) => ({
   leaguesList: state.leagues.leaguesList,
-  searchResult: state.leagues.searchResult,
+  searchResult: state.search.searchResult,
 });
 
 let WithUrlDataLeaguePageContainer = withRouter(LeaguePageContainer);

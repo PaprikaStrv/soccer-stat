@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getLeagueMatchesThunkCreator } from "./../../Redux/leagues-reducer";
+import { getLeagueMatchesThunkCreator } from "./../../Redux/matches-reducer";
 import { withRouter } from 'react-router';
 import Matches from "./Matches";
 
@@ -17,8 +17,8 @@ const MatchesContainer = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  leagueMatches: state.leagues.leagueMatches,
-  searchResult: state.leagues.searchResult,
+  leagueMatches: state.matches.leagueMatches,
+  searchResult: state.search.searchResult,
 });
 
 let WithUrlDataMatchesContainer = withRouter(MatchesContainer);

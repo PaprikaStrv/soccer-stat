@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Field } from 'react-final-form';
 import s from './searchMatch.module.css';
 import { connect } from 'react-redux';
-import { setSearchResult } from "../../Redux/leagues-reducer";
+import { setSearchResult } from "../../Redux/search-reducer";
   
 const SearchMatch = (props) => {
   const onSubmit = (values) => {

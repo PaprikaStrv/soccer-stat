@@ -2,7 +2,6 @@ import React from "react";
 import s from "./matches.module.css";
 
 const Match = (props) => {
-  console.log(props.match)
   return (
     <div className={s.matchContainer}>
       <div className={s.teamsScore}>

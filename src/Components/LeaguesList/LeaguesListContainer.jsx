@@ -17,7 +17,7 @@ const LeaguesListContainer = (props) => {
 
 const mapStateToProps = (state) => ({
   leaguesList: state.leagues.leaguesList,
-  searchResult: state.leagues.searchResult,
+  searchResult: state.search.searchResult,
 });
 
 export default connect(mapStateToProps, {

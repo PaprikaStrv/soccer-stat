@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../Images/soccer_stat_logo.png";
-import SearchLeague from "../SearchLeague/SearchLeague";
 import s from "./header.module.css";
 
 const Header = (props) => {

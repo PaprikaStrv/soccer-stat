@@ -4,6 +4,7 @@ import Header from "./Components/Header/Header";
 import LeaguesListContainer from "./Components/LeaguesList/LeaguesListContainer";
 import LeaguePageContainer from "./Components/League/LeaguePageContainer";
 import TeamsContainer from "./Components/Teams/TeamsContainer";
+import MatchesContainer from "./Components/Matches/MatchesContainer";
 
 const App = (props) => {
   return (
@@ -14,10 +15,6 @@ const App = (props) => {
         <Route
           path="/League/:leagueId"
           render={() => <LeaguePageContainer />}
-        />
-         <Route
-          path="/teams/"
-          render={() => <TeamsContainer />}
         />
       </Switch>
     </div>

@@ -2,7 +2,6 @@ import React from "react";
 import s from "./leaguesList.module.css";
 import LeagueItem from "./LeagueItem";
 import SearchLeague from "./../SearchLeague/SearchLeague";
-import { NavLink } from "react-router-dom";
 
 const LeaguesList = (props) => {
   let League = [];
@@ -39,7 +38,6 @@ const LeaguesList = (props) => {
     <div>
       <div className={s.leaguesListHeader}>
         <h2>Список турниров по футблоу</h2>
-        <NavLink to={"/teams"}>Список команд</NavLink>
         <SearchLeague />
       </div>
       <div className={s.leaguesContainer}>{League}</div>
