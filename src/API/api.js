@@ -26,9 +26,9 @@ export const soccerAPI = {
       });
   },
 
-  getTeams(currentLeague = "") {
+  getTeams(currentLeague = "", currentSeason = "2020") {
     return instance
-      .get(`competitions/${currentLeague}/teams`)
+      .get(`competitions/${currentLeague}/teams?season=${currentSeason}`)
       .then((response) => {
         return response.data;
       });

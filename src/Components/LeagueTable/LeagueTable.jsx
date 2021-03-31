@@ -9,7 +9,7 @@ const LeagueTable = (props) => {
   ));
 
   return (
-    <div>
+    <div className={s.test}>
       {props.standing.group}
       <table>
         <tbody>

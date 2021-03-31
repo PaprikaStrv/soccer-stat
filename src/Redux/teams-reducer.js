@@ -23,9 +23,9 @@ export const setTeamsList = (teams) => ({
   data: teams,
 });
 
-export const getTeamsThunkCreator = (currentLeague) => {
+export const getTeamsThunkCreator = (currentLeague, currentSeason) => {
   return async (dispatch) => {
-    const response = await soccerAPI.getTeams(currentLeague);
+    const response = await soccerAPI.getTeams(currentLeague, currentSeason);
     dispatch(setTeamsList(response));
   };
 };

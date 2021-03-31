@@ -7,8 +7,8 @@ import LeagueTableList from './LeagueTableList';
 
 const LeagueTableContainer = (props) => {
     useEffect(() => {
-        props.getLeagueTableThunkCreator(props.match.params.leagueId)
-    }, [props.match.params.leagueId])
+        props.getLeagueTableThunkCreator(props.match.params.leagueId, props.seasonDate)
+    }, [props.match.params.leagueId, props.seasonDate])
 
     if (!props.leagueTable || props.leagueTable.length === 0) {
         return <div>Loading data</div>;
@@ -21,7 +21,8 @@ const LeagueTableContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    leagueTable: state.leagueTable.table
+    leagueTable: state.leagueTable.table,
+    seasonDate: state.search.searchResult
 });
 
 let WithUrlDataLeagueTableContainer = withRouter(LeagueTableContainer);

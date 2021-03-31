@@ -6,13 +6,15 @@ import s from "./header.module.css";
 const Header = (props) => {
   return (
     <div className={s.headerWrapper}>
-      <NavLink to={"/"} target="_blank" rel="nofollow noopener">
+     
         <div className={s.headerLogoWrapper}>
           <img src={logo} className={s.logoImgSize} alt={""} />
         </div>
-      </NavLink>
+     
 
       <div className={s.headerArticle}>
+      <NavLink to={"/"} target="_blank" rel="nofollow noopener">Список лиг
+      </NavLink>
         <div className={s.avaliableCompetitions}>
           Available competitions(id)
           2000,2001,2002,2003,2013,2014, 
@@ -20,6 +22,7 @@ const Header = (props) => {
         </div>
        
       </div>
+      
     </div>
   );
 };

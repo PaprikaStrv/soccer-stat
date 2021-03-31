@@ -6,7 +6,7 @@ import { setSearchResult } from "../../Redux/search-reducer";
   
 const SearchMatch = (props) => {
   const onSubmit = (values) => {
-    props.setSearchResult(values.findLigue)
+    props.setSearchResult(values.findMatch)
 };
   return (
     <div className={s.searchMatchWrapper}>
@@ -16,7 +16,7 @@ const SearchMatch = (props) => {
           <form onSubmit={handleSubmit} className={s.searchMatchForm}>
             <div>
               <Field
-                name="findLigue"
+                name="findMatch"
                 component="input"
                 placeholder="Найти матч (id)"
               />

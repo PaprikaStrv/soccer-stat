@@ -6,10 +6,9 @@ import Teams from "./Teams";
 
 
 const TeamsContainer = (props) => {
-  console.log(props.match.params)
   useEffect(() => {
-    props.getTeamsThunkCreator(parseInt(props.match.params.leagueId, 10));
-  }, [props.match.params.leagueId]); //зависимость?!
+    props.getTeamsThunkCreator(parseInt(props.match.params.leagueId, 10), props.searchResult);
+  }, [props.match.params.leagueId, props.searchResult]); //зависимость?!
 
   if (!props.teamsList || props.teamsList.length === 0) {
     return <div>Loading data</div>;
