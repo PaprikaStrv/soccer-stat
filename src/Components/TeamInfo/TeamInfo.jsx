@@ -19,12 +19,17 @@ const TeamInfo = (props) => {
 
   return (
     <div>
-      <img
+      <div className={s.teamInfoName}>
+        Соревнования команды: 
+         <img
         src={props.team.crestUrl}
         alt={""}
         className={s.teamInfoLogoWrapper}
       />
       {props.team.name}
+      </div>
+     
+      
       <div className={s.avaliableCompetitions}>{activeCompetitions}</div>
       <Switch>
         <Route

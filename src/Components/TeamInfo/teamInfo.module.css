@@ -9,3 +9,8 @@
     margin-bottom: 20px;
     justify-content: space-around;
 }
+
+.teamInfoName {
+    display: flex;
+    align-items: center;
+}
