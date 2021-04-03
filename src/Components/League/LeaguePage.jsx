@@ -20,7 +20,7 @@ const LeaguePage = (props) => {
           />
           {props.leaguesList.name}
           {props.leaguesList.area.name}
-          <SearchMatch />
+         
         </div>
         <div className={s.leagueLinks}>
           <NavLink to={"/League/" + props.leaguesList.id}>

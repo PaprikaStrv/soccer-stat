@@ -24,3 +24,7 @@
 .teamImage {
     max-width: 60px;
 }
+
+.teamsWrapper a {
+    text-decoration: none;
+}
