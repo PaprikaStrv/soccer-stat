@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { useEffect } from 'react';
 import { getCurrentTeamThunkCreator } from './../../Redux/team-reducer';
+import Preloader from './../Preloader/Preloader';
 
 const TeamInfoContainer = (props) => {
     useEffect(() => {
@@ -11,7 +12,7 @@ const TeamInfoContainer = (props) => {
     }, [props.match.params.teamId]);
 
     if (!props.team || props.team.length === 0) {
-        return <div>Loading data</div>;
+        return <Preloader/>;
     }
 
     return (

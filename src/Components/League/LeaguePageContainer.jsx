@@ -6,6 +6,7 @@ import {
   getLeaguesThunkCreator,
 } from "./../../Redux/leagues-reducer";
 import { withRouter } from "react-router";
+import Preloader from "../Preloader/Preloader";
 
 const LeaguePageContainer = (props) => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const LeaguePageContainer = (props) => {
   }, [props.searchResult]); //зависимость?!
 
   if (!props.leaguesList || props.leaguesList.length === 0) {
-    return <div>Loading data</div>;
+    return <Preloader/>;
   }
 
   return <LeaguePage {...props} />;

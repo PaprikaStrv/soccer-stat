@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getTeamsThunkCreator } from "../../Redux/teams-reducer";
 import { withRouter } from 'react-router';
 import Teams from "./Teams";
+import Preloader from './../Preloader/Preloader';
 
 
 const TeamsContainer = (props) => {
@@ -11,7 +12,7 @@ const TeamsContainer = (props) => {
   }, [props.match.params.leagueId, props.searchResult]); //зависимость?!
 
   if (!props.teamsList || props.teamsList.length === 0) {
-    return <div>Loading data</div>;
+    return <Preloader/>;
   }
 
   return <Teams {...props} />;

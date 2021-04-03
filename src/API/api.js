@@ -47,4 +47,11 @@ export const soccerAPI = {
       return response.data;
     });
   },
+  getTeamCurrentLeagueMatches(currentTeam, competition) {
+    return instance
+      .get(`/teams/${currentTeam}/matches?competitions=${competition}`)
+      .then((response) => {
+        return response.data;
+      });
+  },
 };

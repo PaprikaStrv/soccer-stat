@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import LeaguesList from "./LeaguesList";
 import { getLeaguesThunkCreator } from "./../../Redux/leagues-reducer";
 import { connect } from "react-redux";
+import Preloader from "../Preloader/Preloader";
 
 const LeaguesListContainer = (props) => {
   useEffect(() => {
@@ -9,7 +10,7 @@ const LeaguesListContainer = (props) => {
   }, [props.searchResult]); //зависимость?!
 
   if (props.leaguesList === null || props.leaguesList.length === 0) {
-    return <div>Loading data</div>;
+    return <Preloader/>;
   }
  
   return <LeaguesList {...props} />;

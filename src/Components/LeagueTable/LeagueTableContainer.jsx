@@ -4,6 +4,7 @@ import {  getLeagueTableThunkCreator } from "./../../Redux/leagueTable-reducer";
 import { useEffect } from 'react';
 import { withRouter } from 'react-router';
 import LeagueTableList from './LeagueTableList';
+import Preloader from '../Preloader/Preloader';
 
 const LeagueTableContainer = (props) => {
     useEffect(() => {
@@ -11,7 +12,7 @@ const LeagueTableContainer = (props) => {
     }, [props.match.params.leagueId, props.seasonDate])
 
     if (!props.leagueTable || props.leagueTable.length === 0) {
-        return <div>Loading data</div>;
+        return <Preloader/>;
       }
     return (
         <div>

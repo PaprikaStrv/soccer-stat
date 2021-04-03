@@ -1,0 +1,11 @@
+.teamInfoLogoWrapper {
+    height: 60px;
+    width: 60px;
+}
+
+.avaliableCompetitions {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}

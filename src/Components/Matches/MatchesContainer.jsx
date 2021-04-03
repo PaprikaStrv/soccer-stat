@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getLeagueMatchesThunkCreator } from "./../../Redux/matches-reducer";
 import { withRouter } from 'react-router';
 import Matches from "./Matches";
+import Preloader from './../Preloader/Preloader';
 
 const MatchesContainer = (props) => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const MatchesContainer = (props) => {
   }, [props.match.params.leagueId]); //зависимость?!
 
   if (!props.leagueMatches || props.leagueMatches.length === 0) {
-    return <div>Loading data</div>;
+    return <Preloader/>;
   }
 
   return <Matches {...props} />;
