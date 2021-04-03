@@ -41,4 +41,10 @@ export const soccerAPI = {
         return response.data;
       });
   },
+
+  getTeam(currentTeam) {
+    return instance.get(`teams/${currentTeam}`).then((response) => {
+      return response.data;
+    });
+  },
 };

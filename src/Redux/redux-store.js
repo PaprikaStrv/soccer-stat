@@ -4,6 +4,7 @@ import leaguesReducer from './leagues-reducer';
 import leagueTableReducer from './leagueTable-reducer';
 import matchesReducer from './matches-reducer';
 import searchReducer from './search-reducer';
+import teamReducer from './team-reducer';
 import teamsReducer from './teams-reducer';
 
 
@@ -12,7 +13,8 @@ let reducers = combineReducers({
    matches: matchesReducer,
    teams: teamsReducer,
    leagueTable: leagueTableReducer,
-   search: searchReducer
+   search: searchReducer,
+   team: teamReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

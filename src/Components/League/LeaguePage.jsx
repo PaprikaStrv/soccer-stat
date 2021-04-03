@@ -48,6 +48,7 @@ const LeaguePage = (props) => {
           path="/League/:leagueId/table"
           render={() => <LeagueTableContainer/>}
         />
+        
       </Switch>
     </div>
   );
